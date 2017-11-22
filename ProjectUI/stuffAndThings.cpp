@@ -72,6 +72,9 @@ void delRec() {
 				system("CLS");
 				cout << "Delete Complete\n";
 			}
+			else {
+				errFlag = false;
+			}
 		}
 		else if (toLower(selection) == "n") {
 			system("CLS");
