@@ -1,5 +1,6 @@
 #include "mainPage.h"
 #include "quitScreen.h"
+#include "stuffAndThings.h"
 void printHeader() {
 	cout << " ______                        _     _                   " << endl;
 	cout << "|  ____|              /\\      | |   | |                  " << endl;
@@ -47,11 +48,11 @@ void showMain() {
 			system("pause");
 			break;
 		case 3:
-			cout << "TODO3\n";
+			modRec();
 			system("pause");
 			break;
 		case 4:
-			cout << "TODO4\n";
+			delRec();
 			system("pause");
 			break;
 		case 5:
@@ -60,11 +61,16 @@ void showMain() {
 			break;
 		case 6:
 			cout << "TODO6\n";
+			system("CLS");
+			showRec();
 			system("pause");
 			break;
 		case 7:
 			quitFlag = false;
 			break;
+		default:
+			cout << "Invalid Input,please re-enter \n";
+			system("pause");
 		}
 	} while (quitFlag);
 	quitScreen();

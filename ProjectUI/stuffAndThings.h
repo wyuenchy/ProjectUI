@@ -5,3 +5,5 @@
 #include "mainPage.h"
 using namespace std;
 void showRec();
+void modRec();
+void delRec();
