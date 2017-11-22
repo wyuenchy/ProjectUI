@@ -46,10 +46,11 @@ string toLower(string temp) {
 	return temp;
 }
 void delRec() {
-	bool errFlag = false;
+	bool errFlag;
 	string selection;
 	string demo[9] = { "Mr.","Donald","Trump","1999-9-9","whitehouse, washington DC,USA","99999999","donaldtrump@world.com","president of USA","United States of America" };
 	do {
+		errFlag = true;
 		system("CLS");
 		cout << "Current Data: \n";
 		cout << "1. Title : " << demo[0] << endl;
