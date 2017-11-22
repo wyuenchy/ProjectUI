@@ -46,14 +46,15 @@ void modRec() {
 	cout << "The column you have chosen to filter by are: " << colName[selection - 1] << endl;
 	cout << "Please enter the keywords to be filter on: ";
 	cin >> query;
+	
+	int totalResult = 6;
+	int currResult = 0;
+	int recOnPage = 0;
 	modAscii();
 	cout << "Entry(s) found with selected criteria: \n";
-	int totalResult = 6;
-	int currResult = 1;
-	int recOnPage = 0;
-	while (totalResult > 0) {
-		if (recOnPage != 2) {
-			cout << "Index: " << currResult << endl;
+	while (currResult<=totalResult) {
+		if (recOnPage != 2&&currResult<totalResult) {
+			cout << "Index: " << currResult+1 << endl;
 			cout << "Full Name : " << demo[0] << " " << demo[1] << " " << demo[2] << endl;
 			//cout << "1. Title : " << demo[0] << endl;
 			//cout << "2. Surname : " << demo[1] << endl;
@@ -64,7 +65,6 @@ void modRec() {
 			cout << "7. Email : " << demo[6] << endl;
 			cout << "8. Occupation : " << demo[7] << endl;
 			cout << "9. Company : " << demo[8] << endl << endl;
-			totalResult--;
 			currResult++;
 			recOnPage++;
 		}
@@ -74,10 +74,40 @@ void modRec() {
 			cout << "Input Your Choice: ";
 			cin >> query;
 			if (query == "n" || query == "N") {
-				system("CLS");
-			}
-			recOnPage = 0;
+				if (currResult == totalResult) {
+					modAscii();
+					cout << "You have reach the end,return to last page...\n";
+					system("pause");
+					currResult = currResult - 2;
+				}
+				recOnPage = 0;
+				modAscii();
+				cout << "Entry(s) found with selected criteria: \n";
 
+			}
+			else if (query == "p" || query == "P") {
+				if (currResult <= 2) {
+					modAscii();
+					cout << "There are no preveous page avalible, please re-enter your action.\n";
+					system("pause");
+					currResult = 0;
+					recOnPage = 0;
+					modAscii();
+					cout << "Entry(s) found with selected criteria: \n";
+
+				}
+				else {
+					currResult = currResult - 4;
+					recOnPage = 0;
+					modAscii();
+					cout << "Entry(s) found with selected criteria: \n";
+
+				}
+			}
+			else {
+				//TODO logic for moding stuff
+				break;
+			}
 		}
 	}
 
