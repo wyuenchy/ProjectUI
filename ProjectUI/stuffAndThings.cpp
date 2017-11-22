@@ -75,8 +75,7 @@ void delRec() {
 		}
 		else if (toLower(selection) == "n") {
 			system("CLS");
-			cout << "returning to Homepage...";
-			system("pause");
+			cout << "returning to Homepage...\n";
 		}
 		else {
 			errFlag = false;
