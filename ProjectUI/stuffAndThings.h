@@ -8,3 +8,4 @@ void showRec();
 void modRec();
 void delRec();
 string toLower(string temp);
+void modAscii();
