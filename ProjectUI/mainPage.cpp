@@ -56,7 +56,7 @@ void showMain() {
 			system("pause");
 			break;
 		case 5:
-			cout << "TODO5\n";
+			search();
 			system("pause");
 			break;
 		case 6:
