@@ -173,9 +173,14 @@ void insertMultiple() {
 	cout << "How many data you want to insert? ";
 	cin >> count;
 	insAscii();
-	cout << "Input the data in the order of ";
-	for (int i = 0; i < 15; i++) {
-		cout << colName[i] << " ";
+	for (int j = 0; j < count; j++) {
+		cout << "Input the data in the order of ";
+		for (int i = 0; i < 15; i++) {
+			cout << colName[i] << " ";
+		}
+		for (int i = 0; i < 15; i++) {
+			cin >> insertData[i];
+		}
 	}
 	system("pause");
 }
