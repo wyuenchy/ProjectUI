@@ -18,12 +18,12 @@ void showRec() {
 }
 void modAscii() {
 	system("CLS");
-	cout << "  __  __           _ _ _    __       \n";
-	cout << " |  \\/  | ___   __| (_) |_ / _|_   _ \n";
-	cout << " | |\\/| |/ _ \\ / _` | | __| |_| | | |\n";
-	cout << " | |  | | (_) | (_| | | |_|  _| |_| |\n";
-	cout << " |_|  |_|\\___/ \\__,_|_|\\__|_|  \\__, |\n";
-	cout << "                               |___/ \n";
+	cout << "  __  __           _ _  __       \n";
+	cout << " |  \\/  | ___   __| (_)/ _|_   _ \n";
+	cout << " | |\\/| |/ _ \\ / _` | | |_| | | |\n";
+	cout << " | |  | | (_) | (_| | |  _| |_| |\n";
+	cout << " |_|  |_|\\___/ \\__,_|_|_|  \\__, |\n";
+	cout << "                           |___/ \n";
 	breakLine();
 }
 void modRec() {
@@ -31,10 +31,10 @@ void modRec() {
 	//TODO Searching inplementation
 	int selection;
 	string query;
-	string demo[9] = { "Mr.","Donald","Trump","1999-9-9","whitehouse, washington DC,USA","99999999","donaldtrump@world.com","president of USA","United States of America" };
-	string colName[9] = { "Title","Given Name","Surname","Date Of Birth","Address","Phone No.","Email","Occupation","Company" };
+	string demo[15] = { "Mr.","Trump","Donald","Male","1999-9-9","2994 Arbor Court","Mountain View","Washington","99999","United States","2","99999999","donaldtrump@world.com","President","Trump Co." };
+	string colName[15] = { "Title","Surname","Given Name","Gender","Birthday","StreetAddress","City","State","ZipCode","Country","Country Code","Telephone Number","Email","Occupation","Company" };
 	modAscii();
-	cout << "filter content using: \n";
+	cout << "Filter content using: \n";
 	for (int i = 0; i < sizeof(colName) / sizeof(colName[0]); i++) {
 		cout << i + 1 << ". " << colName[i] << endl;
 
@@ -55,16 +55,17 @@ void modRec() {
 	while (currResult<=totalResult) {
 		if (recOnPage != 2&&currResult<totalResult) {
 			cout << "Index: " << currResult+1 << endl;
-			cout << "Full Name : " << demo[0] << " " << demo[1] << " " << demo[2] << endl;
+			cout << "1. Full Name : " << demo[0] << " " << demo[2] << " " << demo[1] << endl;
 			//cout << "1. Title : " << demo[0] << endl;
 			//cout << "2. Surname : " << demo[1] << endl;
 			//cout << "3. GivenName : " << demo[2] << endl;
-			cout << "4. DateOfBirth : " << demo[3] << endl;
-			cout << "5. Address : " << demo[4] << endl;
-			cout << "6. Phone No. : " << demo[5] << endl;
-			cout << "7. Email : " << demo[6] << endl;
-			cout << "8. Occupation : " << demo[7] << endl;
-			cout << "9. Company : " << demo[8] << endl << endl;
+			cout << "2. Gender : " << demo[3] << endl;
+			cout << "3. Birthday : " << demo[4] << endl;
+			cout << "4. Full Address : " << demo[5] << "," << demo[6] << "," << demo[7] << "," << demo[9] << endl;
+			cout << "5. ZipCode : " << demo[8] << endl;
+			cout << "6. Telephone Number : " << "(" << demo[10] << ") " << demo[11] << endl;
+			cout << "7. Email : " << demo[12] << endl;
+			cout << "8. Occupation : " << demo[13] << " at " << demo[14] << endl << endl;
 			currResult++;
 			recOnPage++;
 		}
