@@ -44,7 +44,7 @@ void showMain() {
 			system("pause");
 				break;
 		case 2:
-			cout << "TODO2\n";
+			insertMultiple();
 			system("pause");
 			break;
 		case 3:

@@ -3,7 +3,7 @@
 
 using namespace std;
 
-int main() {
+int main23() {
 
 
 	cout << "  ____       _      _       \n";

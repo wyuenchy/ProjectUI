@@ -45,22 +45,24 @@ void modRec() {
 	cout << "Please enter the keywords to be filter on: ";
 	cin >> query;
 	
-	int totalResult = 6;
+	int totalResult = 7;
 	int currResult = 0;
 	int recOnPage = 0;
 	modAscii();
 	cout << "Entry(s) found with selected criteria: \n";
-	while (currResult<=totalResult) {
-		if (recOnPage != 2&&currResult<totalResult) {
+	do{
+		if (recOnPage != 5 && currResult < totalResult) {
+			//&&currResult<totalResult
 			cout << "Index: " << currResult+1 << endl;
 			cout << "1. Full Name : " << demo[0] << " " << demo[2] << " " << demo[1] << endl;
-			cout << "2. Gender : " << demo[3] << endl;
-			cout << "3. Birthday : " << demo[4] << endl;
-			cout << "4. Full Address : " << demo[5] << "," << demo[6] << "," << demo[7] << "," << demo[9] << endl;
-			cout << "5. ZipCode : " << demo[8] << endl;
-			cout << "6. Telephone Number : " << "(" << demo[10] << ") " << demo[11] << endl;
-			cout << "7. Email : " << demo[12] << endl;
-			cout << "8. Occupation : " << demo[13] << " at " << demo[14] << endl << endl;
+			//cout << "2. Gender : " << demo[3] << endl;
+			//cout << "3. Birthday : " << demo[4] << endl;
+			//cout << "4. Full Address : " << demo[5] << "," << demo[6] << "," << demo[7] << "," << demo[9] << endl;
+			//cout << "5. ZipCode : " << demo[8] << endl;
+			//cout << "6. Telephone Number : " << "(" << demo[10] << ") " << demo[11] << endl;
+			//cout << "7. Email : " << demo[12] << endl;
+			cout << "2. Occupation : " << demo[13] << " at " << demo[14] << endl;
+			breakLine();
 			currResult++;
 			recOnPage++;
 		}
@@ -74,7 +76,7 @@ void modRec() {
 					modAscii();
 					cout << "You have reach the end,return to last page...\n";
 					system("pause");
-					currResult = currResult - 2;
+					currResult = currResult - 5;
 				}
 				recOnPage = 0;
 				modAscii();
@@ -82,7 +84,7 @@ void modRec() {
 
 			}
 			else if (query == "p" || query == "P") {
-				if (currResult <= 2) {
+				if (currResult <= 5) {
 					modAscii();
 					cout << "There are no preveous page avalible, please re-enter your action.\n";
 					system("pause");
@@ -92,8 +94,13 @@ void modRec() {
 					cout << "Entry(s) found with selected criteria: \n";
 
 				}
-				else {
-					currResult = currResult - 4;
+				else if (currResult >= totalResult) {
+					currResult = currResult - ((currResult%5)+5);
+					recOnPage = 0;
+					modAscii();
+					cout << "Entry(s) found with selected criteria: \n";
+				}else {
+					currResult = currResult - 10;
 					recOnPage = 0;
 					modAscii();
 					cout << "Entry(s) found with selected criteria: \n";
@@ -105,7 +112,7 @@ void modRec() {
 				break;
 			}
 		}
-	}
+	} while (currResult <= totalResult);
 
 	breakLine();
 }
@@ -157,4 +164,28 @@ void delRec() {
 			errFlag = false;
 		}
 	} while (errFlag == false);
+}
+void insertMultiple() {
+	insAscii();
+	int count = 0;
+	string colName[15] = { "Title","Surname","Given Name","Gender","Birthday","StreetAddress","City","State","ZipCode","Country","Country Code","Telephone Number","Email","Occupation","Company" };
+	string insertData[15];
+	cout << "How many data you want to insert? ";
+	cin >> count;
+	insAscii();
+	cout << "Input the data in the order of ";
+	for (int i = 0; i < 15; i++) {
+		cout << colName[i] << " ";
+	}
+	system("pause");
+}
+void insAscii(){
+	system("CLS");
+	cout << "  ___                     _   \n";
+	cout << " |_ _|_ __  ___  ___ _ __| |_ \n";
+	cout << "  | || '_ \\/ __|/ _ \\ '__| __|\n";
+	cout << "  | || | | \\__ \\  __/ |  | |_ \n";
+	cout << " |___|_| |_|___/\\___|_|   \\__|\n";
+	cout << "                              \n";
+	breakLine();
 }
