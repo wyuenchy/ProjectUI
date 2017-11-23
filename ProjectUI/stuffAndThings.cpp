@@ -181,7 +181,10 @@ void insertMultiple() {
 		for (int i = 0; i < 15; i++) {
 			cin >> insertData[i];
 		}
+		//TODO insert Data Algorithm
+		cout << "Data inserted\n";
 	}
+
 	system("pause");
 }
 void insAscii(){
