@@ -11,3 +11,4 @@ string toLower(string temp);
 void modAscii();
 void insAscii();
 void insertMultiple();
+void insertSingle();

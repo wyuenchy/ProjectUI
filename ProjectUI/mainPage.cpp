@@ -40,7 +40,7 @@ void showMain() {
 		cin >> selection;
 		switch (selection) {
 		case 1:
-			cout << "TODO1\n";
+			insertSingle();
 			system("pause");
 				break;
 		case 2:

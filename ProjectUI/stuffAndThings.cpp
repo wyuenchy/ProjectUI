@@ -187,6 +187,31 @@ void insertMultiple() {
 
 	system("pause");
 }
+void insertSingle() {
+	int colPtr;
+	string colName[15] = { "Title","Surname","Given Name","Gender","Birthday","StreetAddress","City","State","ZipCode","Country","Country Code","Telephone Number","Email","Occupation","Company" };
+	string insertData[15];
+	do {
+		insAscii();
+		for (int i = 0; i < 15; i++) {
+			cout << i + 1 << ". " << colName[i] << ": " << insertData[i] << endl;
+		}
+		breakLine();
+		cout << "insert column as the format as [(index)(space)(data)] (e.g. 1 Mr. to insert Mr. to title)\n";
+		cout << "type 0 to save the record, type 999 to discard the change\n";
+		cin >> colPtr;
+		if (colPtr == 999) {
+			break;
+		}
+		else if (colPtr == 0) {
+			//TODO insert Algo
+			break;
+		}
+		else {
+			cin >> insertData[colPtr - 1];
+		}
+	} while (true);
+}
 void insAscii(){
 	system("CLS");
 	cout << "  ___                     _   \n";
