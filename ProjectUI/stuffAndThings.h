@@ -12,3 +12,5 @@ void modAscii();
 void insAscii();
 void insertMultiple();
 void insertSingle();
+void search();
+void searchAscii();

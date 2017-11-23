@@ -208,7 +208,7 @@ void insertSingle() {
 			break;
 		}
 		else {
-			cin >> insertData[colPtr - 1];
+			getline(cin,insertData[colPtr - 1]);
 		}
 	} while (true);
 }
@@ -221,4 +221,10 @@ void insAscii(){
 	cout << " |___|_| |_|___/\\___|_|   \\__|\n";
 	cout << "                              \n";
 	breakLine();
+}
+void searchAscii() {
+
+}
+void search() {
+
 }
