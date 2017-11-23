@@ -1,18 +1,16 @@
 #include"stuffAndThings.h"
 
 void showRec() {
-	string demo[9] = { "Mr.","Donald","Trump","1999-9-9","whitehouse, washington DC,USA","99999999","donaldtrump@world.com","president of USA","United States of America" };
+	string demo[15] = { "Mr.","Trump","Donald","Male","1999-9-9","2994 Arbor Court","Mountain View","Washington","99999","United States","2","99999999","donaldtrump@world.com","President","Trump Co." };
 	for (int i = 0; i < 3; i++) {
-		cout << "Full Name : " << demo[0] << " " << demo[1] << " " << demo[2] << endl;
-		//cout << "Title : " << demo[0] << endl;
-		//cout << "Surname : " << demo[1] << endl;
-		//cout << "GivenName : " << demo[2] << endl;
-		cout << "DateOfBirth : " << demo[3] << endl;
-		cout << "address : " << demo[4] << endl;
-		cout << "Phone No. : " << demo[5] << endl;
-		cout << "Email : " << demo[6] << endl;
-		cout << "Occupation : " << demo[7] << endl;
-		cout << "Company : " << demo[8] << endl;
+		cout << "Full Name : " << demo[0] << " " << demo[2] << " " << demo[1] << endl;
+		cout << "Gender : " << demo[3] << endl;
+		cout << "Birthday : " << demo[4] << endl;
+		cout << "Full Address : " << demo[5] << "," << demo[6] << "," << demo[7] << "," << demo[9] << endl;
+		cout << "ZipCode : " << demo[8] << endl;
+		cout << "Telephone Number : " << "(" << demo[10] << ") " << demo[11] << endl;
+		cout << "Email : " << demo[12] << endl;
+		cout << "Occupation : " << demo[13] << " at " << demo[14] << endl << endl;
 		breakLine();
 	}
 }
@@ -56,9 +54,6 @@ void modRec() {
 		if (recOnPage != 2&&currResult<totalResult) {
 			cout << "Index: " << currResult+1 << endl;
 			cout << "1. Full Name : " << demo[0] << " " << demo[2] << " " << demo[1] << endl;
-			//cout << "1. Title : " << demo[0] << endl;
-			//cout << "2. Surname : " << demo[1] << endl;
-			//cout << "3. GivenName : " << demo[2] << endl;
 			cout << "2. Gender : " << demo[3] << endl;
 			cout << "3. Birthday : " << demo[4] << endl;
 			cout << "4. Full Address : " << demo[5] << "," << demo[6] << "," << demo[7] << "," << demo[9] << endl;
