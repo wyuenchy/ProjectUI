@@ -16,3 +16,4 @@ void searchAscii();
 void printRec();
 void printAscii();
 void delAscii();
+void insertTextFile();

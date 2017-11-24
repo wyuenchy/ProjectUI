@@ -1,4 +1,7 @@
 #include"stuffAndThings.h"
+#include <fstream>
+#include <string>
+#include <sstream>
 
 void modAscii() {
 	system("CLS");
@@ -282,22 +285,35 @@ void insertMultiple() {
 	int count = 0;
 	string colName[15] = { "Title","Surname","Given Name","Gender","Birthday","StreetAddress","City","State","ZipCode","Country","Country Code","Telephone Number","Email","Occupation","Company" };
 	string insertData[15];
-	cout << "How many data you want to insert? ";
-	cin >> count;
-	insAscii();
-	for (int j = 0; j < count; j++) {
-		cout << "Data inserted currently: " << j << endl;
-		for (int i = 0; i < 15; i++) {
-			cout << i + 1 << ". " << colName[i] << " ";
-			cin.ignore();
-			getline(cin, insertData[i]);
-		}
-		//TODO insert Data Algorithm
-		cout << "Data inserted\n";
-		system("pause");
+	int option;
+	cout << "1. Insert multiple data" << endl;
+	cout << "2. Insert textfile" << endl;
+	
+	cin >> option;
+
+	if (option == 1) {
+		system("CLS");
 		insAscii();
+		cout << "How many data you want to insert? ";
+		cin >> count;
+		insAscii();
+		for (int j = 0; j < count; j++) {
+			cout << "Data inserted currently: " << j << endl;
+			for (int i = 0; i < 15; i++) {
+				cout << i + 1 << ". " << colName[i] << " ";
+				cin.ignore();
+				getline(cin, insertData[i]);
+			}
+			//TODO insert Data Algorithm
+			cout << "Data inserted\n";
+			system("pause");
+			insAscii();
+		}
+		cout << "All data has been inserted, return to main menu\n";
 	}
-	cout << "All data has been inserted, return to main menu\n";
+	else if (option == 2) {
+		insertTextFile();
+	}
 }
 void insertSingle() {
 	int colPtr;
@@ -488,4 +504,43 @@ void printRec() {
 			}
 		}
 	} while (currResult <= totalResult);
+}
+
+
+void insertTextFile() {
+
+	system("CLS");
+	insAscii();
+	cout << "If you change your mind, you can type 999 to exit to main menu!" << endl;
+	string tempString = "";
+	string fileName;
+	cout << "Please enter the file name: ";
+	cin >> fileName;
+	ifstream inputFile(fileName);
+	// Prompt user again if wrong filename received
+	if (fileName == "999") {
+		return;
+	}
+	while (!inputFile.good()) {
+		cout << "Wrong file name, input again please: ";
+		cin >> fileName;
+		inputFile.open(fileName);
+		
+		if (fileName == "999") {
+			return;
+		}
+	}
+
+	// Append all lines from the file into a long string
+	while (!inputFile.eof()) {
+		string str, str2;
+		getline(inputFile, str);
+		istringstream iss(str);
+		while (!iss.eof()) {
+			getline(iss, str2, '\t');
+			cout << str2 << "\t";
+
+		}
+
+	}
 }
