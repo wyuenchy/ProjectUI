@@ -38,6 +38,12 @@ void showMain() {
 		breakLine();
 		cout << "Please select the action: ";
 		cin >> selection;
+		if (cin.fail()) {
+			cin.clear();
+			cin.sync();
+			cin.ignore();
+			continue;
+		}
 		switch (selection) {
 		case 1:
 			insertSingle();
