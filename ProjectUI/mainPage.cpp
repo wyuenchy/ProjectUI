@@ -40,10 +40,10 @@ void showMain() {
 		cin >> selection;
 		if (cin.fail()) {
 			cout << "Invalid Input,please re-enter \n";
-			system("pause");
 			cin.clear();
 			cin.sync();
 			cin.ignore();
+			system("pause");
 			continue;
 		}
 		switch (selection) {
