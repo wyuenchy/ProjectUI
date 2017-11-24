@@ -1,19 +1,5 @@
 #include"stuffAndThings.h"
 
-void showRec() {
-	string demo[15] = { "Mr.","Trump","Donald","Male","1999-9-9","2994 Arbor Court","Mountain View","Washington","99999","United States","2","99999999","donaldtrump@world.com","President","Trump Co." };
-	for (int i = 0; i < 3; i++) {
-		cout << "Full Name : " << demo[0] << " " << demo[2] << " " << demo[1] << endl;
-		cout << "Gender : " << demo[3] << endl;
-		cout << "Birthday : " << demo[4] << endl;
-		cout << "Full Address : " << demo[5] << "," << demo[6] << "," << demo[7] << "," << demo[9] << endl;
-		cout << "ZipCode : " << demo[8] << endl;
-		cout << "Telephone Number : " << "(" << demo[10] << ") " << demo[11] << endl;
-		cout << "Email : " << demo[12] << endl;
-		cout << "Occupation : " << demo[13] << " at " << demo[14] << endl << endl;
-		breakLine();
-	}
-}
 void modAscii() {
 	system("CLS");
 	cout << "  __  __           _ _  __       \n";
@@ -327,7 +313,7 @@ void printRec() {
 	int currResult = 0;
 	int totalResult = 78;
 	string query;
-
+	printAscii();
 	string demo[15] = { "Mr.","Trump","Donald","Male","1999-9-9","2994 Arbor Court","Mountain View","Washington","99999","United States","2","99999999","donaldtrump@world.com","President","Trump Co." };
 	string colName[15] = { "Title","Surname","Given Name","Gender","Birthday","StreetAddress","City","State","ZipCode","Country","Country Code","Telephone Number","Email","Occupation","Company" };
 	do {
