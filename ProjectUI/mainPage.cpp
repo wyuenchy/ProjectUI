@@ -60,9 +60,7 @@ void showMain() {
 			system("pause");
 			break;
 		case 6:
-			cout << "TODO6\n";
-			system("CLS");
-			showRec();
+			printRec();
 			system("pause");
 			break;
 		case 7:

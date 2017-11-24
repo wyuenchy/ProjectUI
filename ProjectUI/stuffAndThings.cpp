@@ -322,3 +322,86 @@ void search() {
 		}
 	} while (currResult <= totalResult);
 }
+void printRec() {
+	int recOnPage=0;
+	int currResult = 0;
+	int totalResult = 78;
+	string query;
+
+	string demo[15] = { "Mr.","Trump","Donald","Male","1999-9-9","2994 Arbor Court","Mountain View","Washington","99999","United States","2","99999999","donaldtrump@world.com","President","Trump Co." };
+	string colName[15] = { "Title","Surname","Given Name","Gender","Birthday","StreetAddress","City","State","ZipCode","Country","Country Code","Telephone Number","Email","Occupation","Company" };
+	do {
+		if (recOnPage != 5 && currResult < totalResult) {
+			//&&currResult<totalResult
+			cout << "Index: " << currResult + 1 << endl;
+			cout << "1. Full Name : " << demo[0] << " " << demo[2] << " " << demo[1] << endl;
+			//cout << "2. Gender : " << demo[3] << endl;
+			//cout << "3. Birthday : " << demo[4] << endl;
+			//cout << "4. Full Address : " << demo[5] << "," << demo[6] << "," << demo[7] << "," << demo[9] << endl;
+			//cout << "5. ZipCode : " << demo[8] << endl;
+			//cout << "6. Telephone Number : " << "(" << demo[10] << ") " << demo[11] << endl;
+			//cout << "7. Email : " << demo[12] << endl;
+			cout << "2. Occupation : " << demo[13] << " at " << demo[14] << endl;
+			breakLine();
+			currResult++;
+			recOnPage++;
+		}
+		else {
+			cout << "Input 'n' to go to next page,Input 'p' to go to preveous page \n";
+			cout << "Input the Index to select that record to view the details\n";
+			cout << "Input Your Choice: ";
+			cin >> query;
+			if (query == "n" || query == "N") {
+				if (currResult == totalResult) {
+					searchAscii();
+					cout << "You have reach the end,return to last page...\n";
+					system("pause");
+
+					currResult = currResult - (currResult % 5);
+				}
+				recOnPage = 0;
+				modAscii();
+				cout << "Entry(s) found with selected criteria: \n";
+
+			}
+			else if (query == "p" || query == "P") {
+				if (currResult <= 5) {
+					searchAscii();
+					cout << "There are no preveous page avalible, please re-enter your action.\n";
+					system("pause");
+					currResult = 0;
+					recOnPage = 0;
+					modAscii();
+					cout << "Entry(s) found with selected criteria: \n";
+
+				}
+				else if (currResult >= totalResult) {
+					currResult = currResult - ((currResult % 5) + 5);
+					recOnPage = 0;
+					searchAscii();
+					cout << "Entry(s) found with selected criteria: \n";
+				}
+				else {
+					currResult = currResult - 10;
+					recOnPage = 0;
+					searchAscii();
+					cout << "Entry(s) found with selected criteria: \n";
+
+				}
+			}
+			else {
+				//TODO logic for moding stuff
+				break;
+			}
+		}
+	} while (currResult <= totalResult);
+}
+void printAscii() {
+	system("CLS");
+	cout << "  ____       _       _   \n";
+	cout << " |  _ \\ _ __(_)_ __ | |_ \n";
+	cout << " | |_) | '__| | '_ \\| __|\n";
+	cout << " |  __/| |  | | | | | |_ \n";
+	cout << " |_|   |_|  |_|_| |_|\\__|\n";
+	breakLine();
+}

@@ -14,3 +14,5 @@ void insertMultiple();
 void insertSingle();
 void search();
 void searchAscii();
+void printRec();
+void printAscii();
