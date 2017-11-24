@@ -40,7 +40,7 @@ void showMain() {
 		cin >> selection;
 		switch (selection) {
 		case 1:
-			cout << "TODO1\n";
+			insertSingle();
 			system("pause");
 				break;
 		case 2:
@@ -56,13 +56,11 @@ void showMain() {
 			system("pause");
 			break;
 		case 5:
-			cout << "TODO5\n";
+			search();
 			system("pause");
 			break;
 		case 6:
-			cout << "TODO6\n";
-			system("CLS");
-			showRec();
+			printRec();
 			system("pause");
 			break;
 		case 7:
