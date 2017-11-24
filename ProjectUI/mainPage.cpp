@@ -38,6 +38,14 @@ void showMain() {
 		breakLine();
 		cout << "Please select the action: ";
 		cin >> selection;
+		if (cin.fail()) {
+			cout << "Invalid Input,please re-enter \n";
+			system("pause");
+			cin.clear();
+			cin.sync();
+			cin.ignore();
+			continue;
+		}
 		switch (selection) {
 		case 1:
 			insertSingle();
@@ -66,9 +74,7 @@ void showMain() {
 		case 7:
 			quitFlag = false;
 			break;
-		default:
-			cout << "Invalid Input,please re-enter \n";
-			system("pause");
+
 		}
 	} while (quitFlag);
 	quitScreen();
