@@ -15,3 +15,4 @@ void search();
 void searchAscii();
 void printRec();
 void printAscii();
+void delAscii();
