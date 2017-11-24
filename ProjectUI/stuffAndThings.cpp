@@ -328,6 +328,14 @@ void insertSingle() {
 		cout << "insert column as the format as [(index)(space)(data)] (e.g. 1 Mr. to insert Mr. to title)\n";
 		cout << "type 0 to save the record, type 999 to discard the change\n";
 		cin >> colPtr;
+		if (cin.fail()) {
+			cout << "Invalid Input,please re-enter \n";
+			system("pause");
+			cin.clear();
+			cin.sync();
+			cin.ignore();
+			continue;
+		}
 		if (colPtr == 999) {
 			break;
 		}
@@ -505,8 +513,6 @@ void printRec() {
 		}
 	} while (currResult <= totalResult);
 }
-
-
 void insertTextFile() {
 
 	system("CLS");
