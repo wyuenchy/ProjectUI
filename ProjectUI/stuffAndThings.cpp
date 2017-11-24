@@ -288,7 +288,7 @@ void insertMultiple() {
 	int option;
 	cout << "1. Insert multiple data" << endl;
 	cout << "2. Insert textfile" << endl;
-	
+	cin.ignore();
 	cin >> option;
 
 	if (option == 1) {
